@@ -1,9 +1,14 @@
 import { Faker } from "@faker-js/faker";
-import { User } from "../entity/user.entity";
+import { KakaoUser, LocalUser, NaverUser, User } from "../entity/user.entity";
 import { define } from "typeorm-seeding";
-import * as bcrypt from 'bcrypt';
+import * as bcrypt from "bcrypt";
 
 const providers = ["local", "kakao", "naver"];
+const entity = {
+  local: LocalUser,
+  kakao: KakaoUser,
+  naver: NaverUser,
+};
 
 define(User, (faker: Faker) => {
   const email = faker.internet.email();
@@ -14,9 +19,10 @@ define(User, (faker: Faker) => {
     provider !== "local"
       ? String(Math.floor(Math.random() * 10000000000))
       : null;
-  const password = provider === "local" ? bcrypt.hashSync("qwer1234", 10) : null;
+  const password =
+    provider === "local" ? bcrypt.hashSync("qwer1234", 10) : null;
 
-  const user = new User();
+  const user = new entity[provider as keyof typeof entity]() as any;
   user.email = email;
   user.username = username;
   user.password = password;

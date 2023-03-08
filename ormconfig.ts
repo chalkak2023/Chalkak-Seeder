@@ -1,5 +1,5 @@
 import * as dotenv from "dotenv";
-import { User } from "./src/entity/user.entity";
+import { KakaoUser, LocalUser, NaverUser, User } from "./src/entity/user.entity";
 import { Admin } from "./src/entity/admin.entity";
 import { Collection } from "./src/entity/collection.entity";
 import { CollectionKeyword } from "./src/entity/collection.keyword.entity";
@@ -25,6 +25,9 @@ const config = {
     Meetup,
     Photospot,
     User,
+    LocalUser,
+    NaverUser,
+    KakaoUser
   ],
   synchronize: false,
   migrations: [__dirname + "/src/migrations/*ts"],
