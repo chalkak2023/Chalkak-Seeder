@@ -12,7 +12,7 @@ npm run schema:sync
 npm run seed:run
 
 # 명령어
-- 3 생략(기존 데이터 보존)
+- 4 (기존 데이터 보존)
 npm run start
-- 3 포함(기존 데이터 버림)
+- 3 + 4 (기존 데이터 버림)
 npm run start:drop
