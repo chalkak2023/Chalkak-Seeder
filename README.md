@@ -10,3 +10,9 @@ npm run schema:drop
 npm run schema:sync
 4. 시드를 집어넣는다.
 npm run seed:run
+
+# 명령어
+- 3 생략(기존 데이터 보존)
+npm run start
+- 3 포함(기존 데이터 버림)
+npm run start:drop
