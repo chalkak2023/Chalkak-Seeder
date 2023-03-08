@@ -1,20 +1,17 @@
 import {
-  BeforeInsert,
-  ChildEntity,
   Column,
   CreateDateColumn,
   DeleteDateColumn,
   Entity,
   OneToMany,
   PrimaryGeneratedColumn,
-  UpdateDateColumn,
+  UpdateDateColumn
 } from "typeorm";
 import { Collection } from "./collection.entity";
 import { CollectionKeyword } from "./collection.keyword.entity";
 import { Join } from "./join.entity";
 import { Meetup } from "./meetup.entity";
 import { Photospot } from "./photospot.entity";
-import * as bcrypt from "bcrypt";
 
 @Entity()
 export class User {
