@@ -8,7 +8,7 @@ define(Meetup, (faker: Faker) => {
   const content = faker.random.word();
   const place = faker.random.word();
   const schedule = new Date(Math.floor(Math.random() * 1000*60*60*24*365) + Date.now());
-  const headcount = Math.floor(Math.random() * 9) + 1
+  const headcount = Math.floor(Math.random() * 6) + 3
 
   const meetup = new Meetup();
   meetup.title = title;
