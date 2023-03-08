@@ -4,17 +4,17 @@ import { define } from "typeorm-seeding";
 import { Collection } from '../entity/collection.entity';
 
 function getRandomInRange(from:number, to: number) {
-  return Math.random() * (to - from) + from;
+  return Number((Math.random() * (to - from) + from).toFixed(3));
   // .toFixed() returns string, so ' * 1' is a trick to convert to number
 }
-
+//37.5776087830657, 126.976896737645
 define(Photospot, (faker: Faker, context: {collection: Collection}) => {
   const title = faker.random.word();
   const description = faker.random.word();
   const collectionId = context.collection.id
   const userId = context.collection.userId
-  const latitude = getRandomInRange(37,38)
-  const longitude = getRandomInRange(126,127)
+  const latitude = getRandomInRange(37560,37590) / 1000
+  const longitude = getRandomInRange(126970,126990) / 1000
   const imagePath = 'https://source.unsplash.com/random​'
 
   const photospot = new Photospot();
