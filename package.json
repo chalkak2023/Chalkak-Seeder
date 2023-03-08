@@ -1,0 +1,37 @@
+{
+  "name": "chalkak-seeder",
+  "version": "1.0.0",
+  "description": "찰칵의 테스트를 위해 seeding하는 프로젝트",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "seed:config": "ts-node ./node_modules/typeorm-seeding/dist/cli.js config",
+    "seed:run": "ts-node ./node_modules/typeorm-seeding/dist/cli.js seed",
+    "schema:drop": "ts-node ./node_modules/typeorm/cli.js schema:drop",
+    "schema:sync": "ts-node ./node_modules/typeorm/cli.js schema:sync"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chalkak2023/Chalkak-Seeder.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chalkak2023/Chalkak-Seeder/issues"
+  },
+  "homepage": "https://github.com/chalkak2023/Chalkak-Seeder#readme",
+  "dependencies": {
+    "@faker-js/faker": "^7.6.0",
+    "bcrypt": "^5.1.0",
+    "dotenv": "^16.0.3",
+    "mysql": "^2.18.1",
+    "ts-node": "^10.9.1",
+    "typeorm": "^0.2.24",
+    "typeorm-seeding": "^1.6.1",
+    "typescript": "^4.9.5"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.0"
+  }
+}
