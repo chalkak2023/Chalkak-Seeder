@@ -13,8 +13,8 @@ define(Photospot, (faker: Faker, context: {collection: Collection}) => {
   const description = faker.random.word();
   const collectionId = context.collection.id
   const userId = context.collection.userId
-  const latitude = getRandomInRange(33,43)
-  const longitude = getRandomInRange(124,132)
+  const latitude = getRandomInRange(37,38)
+  const longitude = getRandomInRange(126,127)
   const imagePath = 'https://source.unsplash.com/random​'
 
   const photospot = new Photospot();
