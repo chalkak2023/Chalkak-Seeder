@@ -11,10 +11,10 @@ const entity = {
 };
 
 define(User, (faker: Faker) => {
-  const email = faker.internet.email();
   const username = faker.internet.userName();
   const isBlock = Math.floor(Math.random() * 10) === 0 ? true : false;
   const provider = providers[Math.floor(Math.random() * 3)];
+  const email = provider === 'local' ? faker.internet.email() : null;
   const providerUserId =
     provider !== "local"
       ? String(Math.floor(Math.random() * 10000000000))
