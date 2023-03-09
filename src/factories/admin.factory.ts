@@ -4,7 +4,7 @@ import { define } from "typeorm-seeding";
 import * as bcrypt from 'bcrypt';
 
 define(Admin, (faker: Faker) => {
-  const account = faker.internet.email();
+  const account = faker.internet.email().split('@')[0];
   const password = bcrypt.hashSync("qwer1234", 10);
   const responsibility = faker.internet.userName();
 
